@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="./nav.css" />
+  <link rel="stylesheet" href="singup.css">
+  </head>
+  <body>
+    <header class="sticky">
+      <div class="logo-container">
+        <img src="MOLogo.png" class="logo" alt="" />
+      </div>
+
+      <!-- new -->
+
+      <div class="login">
+        <a href="#" id="openPopupBtn">Log In/Sign Up</a>
+      </div>
+
+      <div id="loginPopup" class="popup">
+        <div class="popup-content">
+          <div class="login-card">
+            <div class="Closebtn">
+              <span class="close" id="closePopupBtn">&times;</span>
+            </div>
+            <div class="container">
+              <form class="form">
+                  <img src="./main_logo.png" alt="" id="signUpLogo">
+                  <p class="title">Signup</p>
+                  <p class="message">Signup now and get full access to our app.</p>
+                  <div class="flex">
+                      <label>
+                          <input required="" placeholder="Firstname" type="text" class="input">
+                          
+                      </label>
+      
+                      <label>
+                          <input required="" placeholder="Lastname" type="text" class="input">
+                          
+                      </label>
+                  </div>  
+                  
+                  <label>
+                      <input required="" placeholder="Email" type="email" class="input">  
+                  </label> 
+                  <label>
+                      <input required="" placeholder="Password" type="password" class="input">
+                  </label>
+                  <label>
+                      <input required="" placeholder="Confirm password" type="password" class="input">
+                  </label>
+                  <div class="btnn">
+                      <input type="submit" value="Sign Up" class="signUp">
+                  <input type="submit" value="Reset" class="signUp">
+                  </div>
+                  
+                  <p class="signin">Already have an account? <a href="./Sign In/signin.html">Signin</a> </p>
+              </form>
+          </div>
+       
+    </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- new -->
+
+      <ul class="navlist">
+        <!-- <li><a href="#home">Home</a></li> -->
+        <li><a href="learning.html">Learning</a></li>
+        <li><a href="#Training">Training</a></li>
+        <li><a href="nda.html">NDA</a></li>
+        <li><a href="offer.html">Offer Letter</a></li>
+        <li><a href="course.html">Certificate</a></li>
+        <li><a href="#Resume">Resume</a></li>
+       
+      </ul>
+      <!-- <div>
+        <button id="registerButton" class="register-button">Login</button>
+      </div> -->
+      <div class="main-page">
+        <h1 class="main">Welcome to Learn Code</h1>
+        <p>
+          We’re thrilled to have you here on your coding journey. <br />Whether
+          you're a complete beginner or looking to sharpen your skills, you've
+          come to the right place.
+        </p>
+        <div class="image">
+          <!-- <img src="2.png" alt="" /> -->
+        </div>
+      </div>
+      <div class="option">
+      <a href="../Admin/index.html">Admin</a>
+      <a href="../User/index.html">User</a>
+    </div>
+    </header>
+
+    
+
+    <!-- Button -->
+
+    <script src="signup.js"></script>
+    <script src="nav.js"></script>
+  </body>
+</html>

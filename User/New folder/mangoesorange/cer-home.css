@@ -1,0 +1,135 @@
+*{
+    margin:0;
+	padding:0;
+	box-sizing:border-box;
+	font-family: 'poppins' sans-serif;
+}
+
+body {
+margin: auto;
+	color:#ededed;
+	/* background-color:#032129f2; */
+}
+
+a{
+    text-decoration: none;
+}
+
+.header {
+	background-color: white;
+    height: 80px;
+}
+
+.gohackathon .img1{
+   height: 80px;
+   width: 320px;
+   margin-left: 20px;
+}
+
+.home-content{
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+margin-left: 200px;
+}
+
+.btn{
+    gap: 40px;
+    width: 50%;
+}
+
+ button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-align: center;
+    width:200px;
+    height: 60px;
+    margin-top: 3px;
+    background-color: rgb(102, 138, 238);
+    box-shadow: 10px 5px 5px rgb(7, 36, 168);
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(95, 177, 209);
+    color: #ffffff;
+    box-shadow: 10px 5px 5px rgb(5, 129, 179);
+}
+
+ .btn-box { 
+	border-radius: 40px;
+	font-size:16px;
+    cursor: pointer;
+    margin-left: 100px;
+    margin-top: 80px;
+}
+
+.study img{
+    margin-top: 50px;
+    height: 550px;
+    width: 800px;
+}
+
+footer{
+    margin-top: 65px;
+    height: 70px;
+    background-color:white;
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content:center;
+}
+
+.content i{
+    font-size: 40px;
+}
+
+.footerContact{    
+    text-align: center;
+}
+
+.footerContact H2{
+margin-bottom: 10PX;
+}
+ .footerContact a{
+    margin-right: 30px;
+    margin-top: 40px;
+    color: black;
+}
+
+.content{    
+    display:flex;
+    flex-direction:row;
+    place-items: center;
+    grid-gap: 100px;
+    margin-top: 100px;
+    text-align: center;
+    justify-content: center;
+}
+
+.c1{
+    background-color:rgb(1, 5, 15);
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 15px;
+    border-right: 10px;
+    border-radius: 20px;
+    
+}
+
+.c2{
+    background-color:rgb(1, 5, 15);
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 15px;
+    border-right: 10px;
+    border-radius: 20px;
+    
+}
+
+
+/* .sidebar{
+    margin-top: 80px;
+} */
