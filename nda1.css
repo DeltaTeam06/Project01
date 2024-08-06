@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background-image: url(cer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color:#a6e9e9f2;
+}
+.main{
+    margin-left: 350px;
+    margin-top: 10vh;
+    width: 800px;
+    height: 900px;
+    border: .25rem solid rgb(105, 186, 218);
+    background-image: url(cer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.border{
+    height: 980px;
+    width: 875px;
+    /* margin-left: 7px; */
+    /* margin-top: 7px; */
+}
+.logo2{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 50px; */
+}
+ .logo2 .ig1 {
+    height: 60px;
+    width: 230px;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+ .logo2 .ig1 img{
+    height: 100%;
+    width: 100%;
+}
+ .logo2 .ig2 {
+    height: 80px;
+    width: 230px;
+    margin-top: 10px;
+    margin-right: 145px;
+}
+ .logo2 .ig2 img{
+    height: 100%;
+    width: 100%;
+}
+
+.input h3{
+    margin-top:4px;
+}
+
+.intro{
+    margin-top: 10px;
+    width: 680px;
+    margin-left: 5%;
+}
+
+.main input{
+    background-color: transparent;
+    border: none;
+}
+h3{
+    margin-left: 20px;
+}
+h4{
+    margin-left: 10px;
+}
+.subject{
+    margin-left: 80px;
+    font-size: 18px;
+}
+.pera p{
+    margin-top: 2rem;
+}
+hr{
+    margin-top:10px;
+    width: 680px;
+    margin-left: 5%;
+}
+footer{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.main2{
+    width: 800px;
+    height: 850px;
+    border: .25rem solid rgb(105, 186, 218);
+    background-image: url(cer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 500px;
+    margin-top: 10px;
+    /* padding-left: 5%; */
+}
+.main2 hr{
+    margin-top: 12px;
+    margin-left: 5%;
+}
+.dir{
+    text-align: center;
+    margin-top: 50px;
+}
+.dir p{
+    font-size: small;
+    text-align: center;
+}
+
+.dir h4{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.main .sign{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+
