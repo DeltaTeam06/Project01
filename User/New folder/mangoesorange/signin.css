@@ -1,0 +1,173 @@
+/* Global Styles */
+
+* {
+    margin: 2px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color:#80eaee;
+  }
+  
+  /* Container Styles */
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  
+  /* Form Styles */
+  
+  .form {
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    border: 4px solid rgb(0, 119, 255);
+    position: relative;
+  }
+  
+  .form .title {
+    font-size: 28px;
+    color: rgba(0, 123, 255, 0.547);
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    
+  }
+  #signUpLogo
+  {
+    float: right;
+    width: 130px;
+  }
+  .form .title::before,
+  .form .title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: rgba(0, 123, 255, 0.547);
+
+  }
+  
+  .form .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: rgba(0, 123, 255, 0.547);
+  }
+  
+  .form .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  /* Message and Signin Styles */
+  
+  .form .message,
+  .form .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+    margin-top: 10px;
+
+    padding: 30px;
+  }
+  
+  .form .signin {
+    text-align: center;
+  }
+  
+  .form .signin a {
+    color: royalblue;
+  }
+  
+  .form .signin a:hover {
+    text-decoration: underline rgb(90, 90, 228,0.756);
+  }
+  
+  /* Flex Styles */
+  
+  
+  
+  /* Label and Input Styles */
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 30px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 6px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,
+  .form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+    
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+  
+  /* Submit Button Styles */
+  .signUp{
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    border: none;
+    background-color: rgba(0, 123, 255, 0.547);
+  }
+  .btnn{
+    padding-left: 20px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .input {
+    margin-bottom: 5%;
+  }
+  
+  /* Animation */
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }

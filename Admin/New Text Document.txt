@@ -1,0 +1,8 @@
+validiation for mail number for user as well as admin
+
+user verification for certificate offer nda
+
+details for resume
+
+nda = new page
+add selector btn for student selection in certificate page

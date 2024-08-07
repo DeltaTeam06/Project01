@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="./assets/demo_pic.jpg" alt="" />
+          </span>
+
+          <div class="text logo-text">
+            <span class="name"></span>
+            <span class="profession">Learn to code</span>
+          </div>
+        </div>
+
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input type="text" placeholder="Search" />
+          </li>
+
+          <ul class="menu-links">
+            <li class="nav-link dashbo">
+              <a href="../index.html">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-link dashbo">
+              <a href="#">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">My Learning</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="../NDA/nda.html">
+                <i class="fa-solid fa-file-signature icon"></i>
+                <span class="text nav-text">NDA</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="fa-solid fa-chalkboard-user icon"></i>
+                <span class="text nav-text">Resume</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="fa-solid fa-question icon"></i>
+                <span class="text nav-text">Help</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="">
+            <a href="#">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+
+            <div class="toggle-switch">
+              <span class="switch"> </span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+   <!-- Adding Skills -->
+    <div class="home">
+      <div class="main">
+        <div class="app">
+          <h1>Add your Skills</h1>
+          <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Add Skills" />
+            <button onclick="addTask()">Add</button>
+          </div>
+          <ul id="taskList"></ul>
+        </div>
+      
+        <div class="app">
+          <h1>Add your Learnings</h1>
+          <div class="input-container">
+            <label for="imageInput">
+              <p class="uplodBn">Uplod Image</p>
+            </label>
+            <input type="file" id="imageInput" accept="image/*">
+          </div>
+          <div class="card" id="imageCard">
+            <img id="uploadedImage" src="" alt="Uploaded Image" hidden>
+            <p id="noImage" class="no-image-text">No image uploaded yet.</p>
+          </div>
+          <ul id="taskList"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const body = document.querySelector("body"),
+        sidebar = body.querySelector("nav"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+      searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+      });
+      modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+          modeText.innerText = "Light mode";
+        } else {
+          modeText.innerText = "Dark mode";
+        }
+      });
+
+      document
+        .getElementById("imageInput")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const img = document.getElementById("uploadedImage");
+              img.src = e.target.result;
+              img.hidden = false;
+              document.getElementById("noImage").hidden = true;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
