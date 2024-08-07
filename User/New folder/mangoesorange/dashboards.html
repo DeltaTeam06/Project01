@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="dashboards.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <!-- <img src="logo.png" alt="Logo"> -->
+                <h1><i class="fa-solid fa-house-user"></i>   Home</h1>
+            </div>
+            <ul>
+                <a href="#learn"><li><i class="fa-solid fa-graduation-cap"></i>Learning</li></a>
+                <a href="nda.html"><li><i class="fa-solid fa-file-pen"></i>NDA</li></a>
+                <a href="offer.html"><li><i class="fa-solid fa-envelope-open-text"></i>Offer Letter</li></a>
+                <a href="home-PAGE.html"><li><i class="fa-solid fa-certificate"></i>Certificate</li></a>
+               <a href="#"><li><i class="fa-solid fa-file"></i>Resume</li></a>
+               <a href="#"><li> <i class="fa-solid fa-right-from-bracket"></i>log out</li></a>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="header">
+                <div class="search">
+                    <input type="text" placeholder="Search"><i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="user">
+                    <a href="signup.html"><img src="user21.jpeg" alt="Profile"></a> 
+                    <!-- <div class="info">
+                        <p>John Doe</p>
+                        <span>3rd year</span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="welcome">
+                <h1>Welcome!</h1>
+                <p> Learn coding</p>
+            </div>
+            <div class="content">
+                <div class="schedule">
+                    <h3>My Schedule</h3>
+                    <table>
+                        <tr>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Course</th>
+                            <th>Instructor</th>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td>10:00 AM</td>
+                            <td>Object Oriented Programming</td>
+                            <td>John Doe</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>2:00 PM</td>
+                            <td>Fundamentals of Database Systems</td>
+                            <td>Jane Doe</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>11:00 AM</td>
+                            <td>Data Structures and Algorithms</td>
+                            <td>Bob Smith</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="instructors">
+                    <h3>Course Instructors</h3>
+                    <div class="instructors-list">
+                        <img src="user21.jpeg" alt="Instructor">
+                        <img src="user21.jpeg" alt="Instructor">
+                        <img src="user21.jpeg" alt="Instructor">
+                    </div>
+                    <div class="notices">
+                        <p>Daily notice</p>
+                        <a href="#">See all</a>
+                        <div class="notice">
+                            <p>Prelim payment due</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <a href="#">See more</a>
+                        </div>
+                        <!-- <div class="notice">
+                            <p>Exam schedule</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                            <a href="#">See more</a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="enrolled-courses">
+                    <h3>Enrolled Courses</h3>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="Oops.png" alt="Course">
+                        </div>
+                        <div class="course-info">
+                            <p>Object oriented programming</p>
+                            <a href="#">View</a>
+                        </div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="DB.jpeg" alt="Course">
+                        </div>
+                        <div class="course-info">
+                            <p>Fundamentals of database systems</p>
+                            <a href="#">View</a>
+                        </div>
+                    </div>
+                    <a href="#" class="see-all">See all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="input" id="learn" >
+        <h1>LEARNINGS</h1>
+        <input type="file" id="file">
+        <!-- <label for="file">Upload File</label> -->
+        <input type="file">
+        <input type="file">
+        <input type="file">
+        <input type="file">
+        <input type="file">
+       </section>
+</body>
+</html>
