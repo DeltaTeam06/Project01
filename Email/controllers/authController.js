@@ -102,7 +102,7 @@ const login = async (req, res) => {
       }
     }
   } catch (err) {
-    res.status(500).send({ status: 'why this error', err: err });
+    res.status(500).send({ status: 'User might not be verified error', err: err });
   }
 };
 
