@@ -4,22 +4,29 @@ const { Schema } = require('mongoose')
 const userSchema = new Schema({
   name: {
     type: String,
-    required: true,
-    maxLength: 25
+    required : true
   },
   email: {
     type: String,
+    unique: true,
     required: true
   },
   password: {
     type: String,
     required: true,
   },
-  isAdmin: {
-    type: Boolean,
-    default: false
-  }
+  otp : {
+    type : Number,
+    default : 0,
+  },
+  verify : {
+    type : Boolean,
+    default : false,
+  },
+  
 })
+
+
 
 const UserModel = mongoose.model('users', userSchema)
 

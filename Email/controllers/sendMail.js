@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const sendMail = async (email) => {
+const sendMail = async (email,otp = 1234) => {
 
     try {
     let testAccount = await nodemailer.createTestAccount();
@@ -25,7 +25,7 @@ const sendMail = async (email) => {
         to: [`${email}`], // list of receivers
         subject: "verify email OTP password ✔", 
         text: "Hello my world Anurag", 
-        html: `Your Email OTP ${Math.random()}`,
+        html: `Your Email OTP ${otp}`,
     });
 
   console.log("Message sent: %s", info.messageId);
