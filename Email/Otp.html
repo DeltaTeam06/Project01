@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #008CBA;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007B9E;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Authenticate</h2>
+        <form action="/authenticate" method="post">
+            <div>
+                <label for="otp">Email Otp : </label>
+                <input type="password" id="otp" name="otp">
+            </div>
+            <div>
+                <button type="button" onclick="resendOtp()">Resend Otp</button>
+            </div>
+            <input type="submit" value="verify">
+            <div id="output"></div>
+        </form>
+    </center>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const resendOtp = async () => {
+            axios.post('http://localhost:8000/resendotp')
+                .then(function(response) {
+                    console.log(response);
+                    document.getElementById('output').innerHTML = `
+                        <h3>${response.data.msg}</h3>
+                    `;
+                })
+                .catch(function(error) {
+                    // Handle error
+                    console.error(error);
+                    document.getElementById('output').innerHTML = `<p>Error fetching data</p>`;
+                });
+        }
+    </script>
+</body>
+</html>
