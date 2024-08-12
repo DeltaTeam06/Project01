@@ -1,4 +1,4 @@
-const UserModel = require("../models/userModel");
+const Student = require("../models/student");
 const { Router } = require('express');
 const sendMail = require("./sendMail");
 const jwt = require('jsonwebtoken');
@@ -11,17 +11,17 @@ const signup = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    const existingUser = await UserModel.findOne({ email });
+    const existingUser = await Student.findOne({ 'basicInfo.email': email });
 
     if (existingUser && existingUser.verify === true) {
       return res.status(400).send({ status: 'error', msg: "User already exists with this email" });
     }
 
     if(!existingUser){
-    const newUser = await UserModel.create({ name, email, password, otp: otpass })
+    const newUser = await Student.create({ basicInfo:{name:  name, email : email, password : password}, otp: otpass })
     }
     else{
-      const updateResult = await UserModel.updateOne({ email: email }, {name,password,password, otp: otpass });
+      const updateResult = await Student.updateOne({ 'basicInfo.email': email }, {basicInfo:{name:  name, email : email , password : password}, otp: otpass });
     }
 
     sendMail(email, otpass);
@@ -29,7 +29,7 @@ const signup = async (req, res) => {
     
     res.redirect('/authenticate');
   } catch (err) {
-    const indexes = await UserModel.collection.indexes();
+    const indexes = await Student.collection.indexes();
     res.status(500).send({ status: 'error', err: err , indexes});
   }
 };
@@ -42,14 +42,15 @@ const otpp = async (req, res) => {
   if (!email) {
     return res.status(400).send({ status: 'error', msg: 'Email is missing from the session.' });
   }
-  const user = await UserModel.findOne({ email });
+
+  const user = await Student.findOne({ 'basicInfo.email' : email });
 
   if (!user) {
     return res.status(404).send({ status: 'error', msg: `User not found for email: ${email}` });
   }
 
   if (otp == user.otp) {
-    const updateResult = await UserModel.updateOne({ email },{ verify : true})
+    const updateResult = await Student.updateOne({  'basicInfo.email' : email}, { verify : true})
     req.session.destroy(); 
     return res.redirect('/login');
   } else {
@@ -64,7 +65,7 @@ const resend = async (req, res) => {
     otpass = Math.floor(Math.random() * 9000) + 1000;
 
     const email = req.session.email;
-    const updateResult = await UserModel.updateOne({ email: email }, { otp: otpass });
+    const updateResult = await Student.updateOne({ 'basicInfo.email': email }, { otp: otpass });
 
     await sendMail(email, otpass);
     authRouter.post('/authenticate');
@@ -80,13 +81,13 @@ const login = async (req, res) => {
   const { email, password } = req.body;
   
   try {
-    const user = await UserModel.findOne({ email, password })
+    const user = await Student.findOne({ 'basicInfo.email': email,  'basicInfo.password' : password })
     
 
     if (!user) {
       res.status(401).send({ status: 'error', msg: "Invalid User" });
     } else {
-      const userPayload = { email: user.email, name: user.name };   
+      const userPayload = { email: user.basicInfo.email, name: user.basicInfo.email };   
 
       
       if(user.verify === true){
@@ -102,7 +103,7 @@ const login = async (req, res) => {
       }
     }
   } catch (err) {
-    res.status(500).send({ status: 'User might not be verified error', err: err });
+    res.status(500).send({ status: 'why this error', err: err });
   }
 };
 
